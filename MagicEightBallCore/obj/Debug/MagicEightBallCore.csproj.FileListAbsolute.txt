@@ -1,0 +1,5 @@
+C:\Dev\GitHub\WebServicesPresentation\MagicEightBallCore\bin\Debug\MagicEightBallCore.dll
+C:\Dev\GitHub\WebServicesPresentation\MagicEightBallCore\bin\Debug\MagicEightBallCore.pdb
+C:\Dev\GitHub\WebServicesPresentation\MagicEightBallCore\obj\Debug\MagicEightBallCore.csprojResolveAssemblyReference.cache
+C:\Dev\GitHub\WebServicesPresentation\MagicEightBallCore\obj\Debug\MagicEightBallCore.dll
+C:\Dev\GitHub\WebServicesPresentation\MagicEightBallCore\obj\Debug\MagicEightBallCore.pdb
