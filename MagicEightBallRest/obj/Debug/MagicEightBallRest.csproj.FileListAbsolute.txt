@@ -28,3 +28,5 @@ C:\Dev\GitHub\WebServicesPresentation\MagicEightBallRest\obj\Debug\MagicEightBal
 C:\Dev\GitHub\WebServicesPresentation\MagicEightBallRest\obj\Debug\MagicEightBallRest.pdb
 C:\Dev\GitHub\WebServicesPresentation\MagicEightBallRest\bin\MagicEightBallWcf.dll
 C:\Dev\GitHub\WebServicesPresentation\MagicEightBallRest\bin\MagicEightBallWcf.pdb
+C:\Dev\GitHub\WebServicesPresentation\MagicEightBallRest\bin\MagicEightBallCore.dll
+C:\Dev\GitHub\WebServicesPresentation\MagicEightBallRest\bin\MagicEightBallCore.pdb
