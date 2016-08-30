@@ -33,7 +33,7 @@ namespace MagicEightBallCore
                 return "never!";
 
             if (question.Contains("how") == true)
-                return "how do you not know how to answer a Yes or No quesiton?";
+                return "how... is not a Yes or No quesiton?";
 
             if (question.Contains("gil") == true)
                 return "gil is magic";            

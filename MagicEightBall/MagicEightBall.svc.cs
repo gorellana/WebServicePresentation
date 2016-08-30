@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MagicEightBallCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -20,17 +21,26 @@ namespace MagicEightBallWcf
             return MagicEightBallCore.Magic.GetAnswer(question);
         }
 
-        public  string SubmitQuestionComposite(Request question)
+        public List<string> GetAnserList()
         {
-            string answer = "This is the ansswer";
-
-            
-
-            return answer;
+            return Magic.GetAnswerList();
         }
 
 
-        
-        
+        public string GetAnswerByQuestionNumber(int questionNumber)
+        {
+
+            List<string> answers = Magic.GetAnswerList();
+
+            if (questionNumber >= 0 && questionNumber <= answers.Count)
+            {
+                return string.Format("Question {0} is: {1}", questionNumber, answers[questionNumber - 1]);
+            }
+
+            return string.Format("Queseton {0} does not exist", questionNumber);
+        }
+
+
+
     }
 }

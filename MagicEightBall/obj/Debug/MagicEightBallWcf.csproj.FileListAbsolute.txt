@@ -18,3 +18,11 @@ C:\Dev\GitHub\WebServicesPresentation\MagicEightBall\obj\Debug\MagicEightBallWcf
 C:\Dev\GitHub\WebServicesPresentation\MagicEightBall\obj\Debug\MagicEightBallWcf.pdb
 C:\Dev\GitHub\WebServicesPresentation\MagicEightBall\bin\MagicEightBallCore.dll
 C:\Dev\GitHub\WebServicesPresentation\MagicEightBall\bin\MagicEightBallCore.pdb
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBall\bin\MagicEightBallWcf.dll.config
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBall\bin\MagicEightBallWcf.dll
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBall\bin\MagicEightBallWcf.pdb
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBall\bin\MagicEightBallCore.dll
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBall\bin\MagicEightBallCore.pdb
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBall\obj\Debug\MagicEightBallWcf.csprojResolveAssemblyReference.cache
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBall\obj\Debug\MagicEightBallWcf.dll
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBall\obj\Debug\MagicEightBallWcf.pdb

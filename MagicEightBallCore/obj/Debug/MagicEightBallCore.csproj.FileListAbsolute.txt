@@ -3,3 +3,8 @@ C:\Dev\GitHub\WebServicesPresentation\MagicEightBallCore\bin\Debug\MagicEightBal
 C:\Dev\GitHub\WebServicesPresentation\MagicEightBallCore\obj\Debug\MagicEightBallCore.csprojResolveAssemblyReference.cache
 C:\Dev\GitHub\WebServicesPresentation\MagicEightBallCore\obj\Debug\MagicEightBallCore.dll
 C:\Dev\GitHub\WebServicesPresentation\MagicEightBallCore\obj\Debug\MagicEightBallCore.pdb
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBallCore\bin\Debug\MagicEightBallCore.dll
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBallCore\bin\Debug\MagicEightBallCore.pdb
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBallCore\obj\Debug\MagicEightBallCore.csprojResolveAssemblyReference.cache
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBallCore\obj\Debug\MagicEightBallCore.dll
+C:\_Work\Sandbox\WebServicePresentation\MagicEightBallCore\obj\Debug\MagicEightBallCore.pdb

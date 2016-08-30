@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace MagicEightBallRest.Controllers
 {
-    //http://localhost/magicEightBallRest/api/answers?question=how%20do%20you%20do%20it
+    //http://localhost/mebRest/api/answer?question=hello
     public class AnswerController : ApiController
     {
         // Gets All the answers
@@ -17,7 +17,7 @@ namespace MagicEightBallRest.Controllers
         [HttpGet]
         public List<string> GetAnswer()
         {
-           return Magic.GetAnswerList();
+            return Magic.GetAnswerList();
         }
 
         //Gets the answer that correstponds to the number the user typed in
@@ -53,13 +53,14 @@ namespace MagicEightBallRest.Controllers
         }
 
         [Route("api/answer")]
-        [HttpGet]
+ 
         public string GetAnswer(string question, string name)
         {
             MagicEightBallService wcf = new MagicEightBallService();
             return wcf.SubmitQuestion(question);
         }
 
+        
         [Route("api/orders/{id}")]
         [HttpGet]
         public string GetOrders(int id)
