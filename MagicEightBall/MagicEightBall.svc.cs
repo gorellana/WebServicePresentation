@@ -1,46 +1,46 @@
 ﻿using MagicEightBallCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 
 namespace MagicEightBallWcf
 {
-
     public class MagicEightBallService : Imagic
     {
-        public  string SubmitQuestion(string question)
+        public MagicResponse SubmitQuestion(string question)
         {
+            MagicResponse answer = new MagicResponse();
+
             if (string.IsNullOrEmpty(question))
             {
-                return "What is your question?";
+                answer.MagicAnswer = "What is your question?";
+                return answer;
             }
-            return MagicEightBallCore.Magic.GetAnswer(question);
+
+            
+            answer.MagicAnswer = MagicEightBallCore.Magic.GetAnswer(question);
+            return answer;
         }
 
-        public List<string> GetAnserList()
+        public MagicResponse GetAnwserList()
         {
-            return Magic.GetAnswerList();
+            MagicResponse answer = new MagicResponse();
+            answer.AllAnswers =  Magic.GetAnswerList();
+            return answer;
         }
 
-
-        public string GetAnswerByQuestionNumber(int questionNumber)
+        public MagicResponse GetAnswerByQuestionNumber(int questionNumber)
         {
+            MagicResponse answer = new MagicResponse();
 
             List<string> answers = Magic.GetAnswerList();
 
             if (questionNumber >= 0 && questionNumber <= answers.Count)
             {
-                return string.Format("Question {0} is: {1}", questionNumber, answers[questionNumber - 1]);
+                answer.MagicAnswer =  string.Format("Question {0} is: {1}", questionNumber, answers[questionNumber - 1]);
+                return answer;
             }
 
-            return string.Format("Queseton {0} does not exist", questionNumber);
+            answer.MagicAnswer =  string.Format("Queseton {0} does not exist", questionNumber);
+            return answer;
         }
-
-
-
     }
 }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 
 namespace MagicEightBallWcf
 {
@@ -14,23 +10,26 @@ namespace MagicEightBallWcf
     {
         //[OperationContract]Indicates that this method defines an operation that is part of a service contract
         [OperationContract]
-        string SubmitQuestion(string question);
+        MagicResponse SubmitQuestion(string question);
 
         [OperationContract]
-        List<string> GetAnserList();
+        MagicResponse GetAnwserList();
 
+        [OperationContract]
+        MagicResponse GetAnswerByQuestionNumber(int questionNumber);
 
+    }    
 
+    [DataContract]
+    public class MagicResponse
+    {
+        [DataMember]
+        public string MagicAnswer { get; set; }
 
-
-
-
+        [DataMember]
+        public List<string> AllAnswers { get; set; }
     }
 
-
-    
-
-    
 }
 
 

@@ -9,63 +9,60 @@ using System.Web.Http;
 
 namespace MagicEightBallRest.Controllers
 {
-    //http://localhost/mebRest/api/answer?question=hello
+    
     public class AnswerController : ApiController
     {
-        // Gets All the answers
+        // Gets All the answers //http://localhost/mebRest/api/answer
         [Route("api/answer")]
         [HttpGet]
-        public List<string> GetAnswer()
+        public MagicResponse GetAnswer()
         {
-            return Magic.GetAnswerList();
+            if (!String.IsNullOrEmpty(Request.RequestUri.Query.ToString()))
+            {               
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+
+            MagicResponse response = new MagicResponse();
+            response.AllAnswers = Magic.GetAnswerList();
+            return response;
         }
 
-        //Gets the answer that correstponds to the number the user typed in
+        //return an answer by question number http://localhost/mebRest/api/answer/1
         [Route("api/answer/{questionNumber}")]
         [HttpGet]
-        public string GetAnswer(int questionNumber)
+        public MagicResponse GetAnswer(int questionNumber)
         {
-           
+            MagicResponse response = new MagicResponse();
+
             List<string> answers = Magic.GetAnswerList();
                
             if (questionNumber >= 0 && questionNumber <= answers.Count)
             {
-                 return string.Format("Question {0} is: {1}", questionNumber, answers[questionNumber - 1]);
-            }           
-                       
-             return string.Format("Queseton {0} does not exist",questionNumber);                       
+                 response.MagicAnswer = string.Format("Question {0} is: {1}", questionNumber, answers[questionNumber - 1]);
+                return response;
+            }
+
+            response.MagicAnswer = string.Format("Queseton {0} does not exist",questionNumber);
+            return response;                      
         }
 
-        // answer based on query string ?question=is my name
-        [Route("api/answer")]      
+        // Question in query string http://localhost/mebRest/api/answer?question=did I go
+        [Route("api/answer/")]
         [HttpGet]
-        public string AskQuestion(string question)
+        public MagicResponse AskQuestion(string question)
         {
+            MagicResponse response = new MagicResponse();
+
             int number;
             bool isNumber = int.TryParse(question, out number);
             if (!int.TryParse(question, out number) )
             {
-                return Magic.GetAnswer(question);
+                response.MagicAnswer =  Magic.GetAnswer(question);
+                return response;
             }
 
-            return string.Format("{0} What?... that is not a question.",question);
-                               
-        }
-
-        [Route("api/answer")]
- 
-        public string GetAnswer(string question, string name)
-        {
-            MagicEightBallService wcf = new MagicEightBallService();
-            return wcf.SubmitQuestion(question);
-        }
-
-        
-        [Route("api/orders/{id}")]
-        [HttpGet]
-        public string GetOrders(int id)
-        {
-            return string.Format("Your Order {0} contains french fries",id);
-        }
+            response.MagicAnswer = string.Format("{0} What?... that is not a question.",question);
+            return response;                               
+        }                                
     }
 }

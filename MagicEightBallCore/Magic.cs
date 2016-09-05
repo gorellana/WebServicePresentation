@@ -10,35 +10,47 @@ namespace MagicEightBallCore
     {
         public static string GetAnswer(string userQuestion)
         {
+            string validationMsg = ValidateQuestion(userQuestion);
+
+            if (!string.IsNullOrEmpty(validationMsg))
+            {
+                return validationMsg;
+            }
+
+            return GetRandomAnswer();
+        }
+
+        private static string ValidateQuestion( string userQuestion)
+        {
             if (string.IsNullOrEmpty(userQuestion))
             {
                 return "What is your question?";
             }
 
-            string question = userQuestion.ToLower();            
+            string question = userQuestion.ToLower();
 
-            if (question.Contains("name") == true)            
+            if (question.Contains("name") == true)
                 return "What's in a name anyway?";
 
             if (question.Contains("who") == true)
                 return "who... your mama!";
 
-            if (question.Contains("what") == true)            
-                return "Yes or No questions please.";            
+            if (question.Contains("what") == true)
+                return "Yes or No questions please.";
 
-            if (question.Contains("where") == true)            
-                return "in your under wear!";            
+            if (question.Contains("where") == true)
+                return "in your under wear!";
 
-            if (question.Contains("when") == true)            
+            if (question.Contains("when") == true)
                 return "never!";
 
             if (question.Contains("how") == true)
                 return "how... is not a Yes or No quesiton?";
 
             if (question.Contains("gil") == true)
-                return "gil is magic";            
+                return "gil is magic";
 
-            return GetRandomAnswer();
+            return string.Empty;
         }
 
         private static string GetRandomAnswer()
@@ -50,7 +62,6 @@ namespace MagicEightBallCore
             List<string> answerList = GetAnswerList();            
             return answerList[questionNumber];
         }
-
 
         public static List<string> GetAnswerList()
         {
